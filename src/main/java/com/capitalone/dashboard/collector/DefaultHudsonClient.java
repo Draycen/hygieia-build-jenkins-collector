@@ -630,8 +630,7 @@ public class DefaultHudsonClient implements HudsonClient {
 	        			String domain3 = getDomain(sUrl);
 	        			String domain1 = domain3.replace("jenkins:8080","10.39.32.45:32001");
 	        			String domain2 = getDomain(servers.get(i));
-	        			if (StringUtils.isNotEmpty(domain1) && StringUtils.isNotEmpty(domain2) && Objects.equals(domain1, domain2)
-	        					&& getPort(sUrl) == getPort(servers.get(i))) {
+	        			if (StringUtils.isNotEmpty(domain1) && StringUtils.isNotEmpty(domain2)) {
 	                		exactMatchFound = true;	
 	        			}
 	        			if (exactMatchFound && (i < usernames.size()) && (i < apiKeys.size()) 
