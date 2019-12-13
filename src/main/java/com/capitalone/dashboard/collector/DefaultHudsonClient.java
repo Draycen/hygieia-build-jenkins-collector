@@ -144,7 +144,7 @@ public class DefaultHudsonClient implements HudsonClient {
 	                    JSONObject jsonJob = (JSONObject) job;
 	
 	                    final String jobName = getString(jsonJob, "name");
-	                    final String jobURL = getString(jsonJob, "url");
+	                    final String jobURL = "10.39.32.45:32001";
                         final String jobClass = getString(jsonJob, "_class");
 
                         LOG.debug("Process jobName " + jobName + " jobURL " + jobURL + " jobClass " + jobClass);
