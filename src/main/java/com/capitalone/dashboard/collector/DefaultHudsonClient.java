@@ -308,8 +308,10 @@ public class DefaultHudsonClient implements HudsonClient {
     @Override
     public Build getBuildDetails(String buildUrl, String instanceUrl) {
         try {
-            String newUrl = rebuildJobUrl(buildUrl, instanceUrl);
-            String url = joinURL(newUrl, new String[]{BUILD_DETAILS_URL_SUFFIX});
+            String newUrl2 = rebuildJobUrl(buildUrl, instanceUrl);
+            String newUrl = newUrl2.replace("jenkins:8080","10.39.32.45:32001");
+            String url1 = joinURL(newUrl, new String[]{BUILD_DETAILS_URL_SUFFIX});
+            String url = newUrl1.replace("jenkins:8080","10.39.32.45:32001");
             ResponseEntity<String> result = makeRestCall(url);
             String resultJSON = result.getBody();
             if (StringUtils.isEmpty(resultJSON)) {
