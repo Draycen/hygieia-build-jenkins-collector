@@ -391,8 +391,8 @@ public class DefaultHudsonClient implements HudsonClient {
         URL buildUrl = new URL(URLDecoder.decode(buildEscapeCharUrl, "UTF-8"));
         String buildPath = buildUrl.getPath();
 
-        String host = buildUrl.getHost();
-        int port = buildUrl.getPort();
+        String host = "10.39.32.45";
+        int port = 32001;
         URI newUri = new URI(instanceProtocol, userInfo, host, port, buildPath, null, null);
         return newUri.toString();
     }
