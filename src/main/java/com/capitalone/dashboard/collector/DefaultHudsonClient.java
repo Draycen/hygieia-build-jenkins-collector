@@ -245,7 +245,7 @@ public class DefaultHudsonClient implements HudsonClient {
     
                     //Modify localhost if Docker Natting is being done
                     if (!dockerLocalHostIP.isEmpty()) {
-                        buildURL = buildURL.replace("localhost", dockerLocalHostIP);
+                        buildURL = buildURL.replace("jenkins:8080", dockerLocalHostIP);
                         LOG.debug("Adding build & Updated URL to map LocalHost for Docker: " + buildURL);
                     } else {
                         LOG.debug(" Adding Build: " + buildURL);
