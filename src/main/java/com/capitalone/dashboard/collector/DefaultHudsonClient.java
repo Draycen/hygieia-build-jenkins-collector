@@ -385,9 +385,10 @@ public class DefaultHudsonClient implements HudsonClient {
 	    
 	//decode to handle + in the job name.
         String buildEscapeChar = build.replace("+","%2B");
+        String buildEscapeCharUrl = build.replace("jenkins:8080","10.39.32.45:32001");
 	    
         //decode to handle spaces in the job name.
-        URL buildUrl = new URL(URLDecoder.decode(buildEscapeChar, "UTF-8"));
+        URL buildUrl = new URL(URLDecoder.decode(buildEscapeCharUrl, "UTF-8"));
         String buildPath = buildUrl.getPath();
 
         String host = buildUrl.getHost();

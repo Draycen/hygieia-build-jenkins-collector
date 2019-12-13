@@ -310,7 +310,7 @@
         <configuration>
           <skipDockerBuild>false</skipDockerBuild>
           <imageName>hygieia-build-jenkins-collector</imageName>
-          <dockerDirectory>${project.basedir}/docker</dockerDirectory>
+          <dockerDirectory>./</dockerDirectory>
           <resources>
             <resource>
               <targetPath>/</targetPath>
