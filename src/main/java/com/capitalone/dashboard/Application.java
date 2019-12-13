@@ -12,7 +12,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class Application {
 
     public static void main(String[] args) {
-        //HttpsURLConnection.setDefaultHostnameVerifier((s, sslSession) -> true);
+        HttpsURLConnection.setDefaultHostnameVerifier((s, sslSession) -> true);
         SpringApplication.run(Application.class, args);
     }
 }

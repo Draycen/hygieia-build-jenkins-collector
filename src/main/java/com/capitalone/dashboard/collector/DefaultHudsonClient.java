@@ -385,7 +385,7 @@ public class DefaultHudsonClient implements HudsonClient {
 	    
 	//decode to handle + in the job name.
         String buildEscapeChar = build.replace("+","%2B");
-        String buildEscapeCharUrl = build.replace("jenkins:8080","10.39.32.45:32001");
+        String buildEscapeCharUrl = buildEscapeChar.replace("jenkins:8080","10.39.32.45:32001");
 	    
         //decode to handle spaces in the job name.
         URL buildUrl = new URL(URLDecoder.decode(buildEscapeCharUrl, "UTF-8"));
@@ -627,7 +627,8 @@ public class DefaultHudsonClient implements HudsonClient {
         		boolean exactMatchFound = false;
 	        	for (int i = 0; i < servers.size(); i++) {
 	        		if ((servers.get(i) != null)) {
-	        			String domain1 = getDomain(sUrl);
+	        			String domain3 = getDomain(sUrl);
+	        			String domain1 = domain3.replace("jenkins:8080","10.39.32.45:32001");
 	        			String domain2 = getDomain(servers.get(i));
 	        			if (StringUtils.isNotEmpty(domain1) && StringUtils.isNotEmpty(domain2) && Objects.equals(domain1, domain2)
 	        					&& getPort(sUrl) == getPort(servers.get(i))) {
