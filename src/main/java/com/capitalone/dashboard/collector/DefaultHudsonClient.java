@@ -241,11 +241,12 @@ public class DefaultHudsonClient implements HudsonClient {
                 if (!"0".equals(buildNumber)) {
                     Build hudsonBuild = new Build();
                     hudsonBuild.setNumber(buildNumber);
-                    String buildURL = getString(jsonBuild, "url");
+                    String buildURL1 = getString(jsonBuild, "url");
+                    String buildURL = buildURL1.replace("jenkins:8080","10.39.32.45:32001");
     
                     //Modify localhost if Docker Natting is being done
                     if (!dockerLocalHostIP.isEmpty()) {
-                        buildURL = buildURL.replace("jenkins:8080", dockerLocalHostIP);
+                        //buildURL = buildURL.replace("jenkins:8080", dockerLocalHostIP);
                         LOG.debug("Adding build & Updated URL to map LocalHost for Docker: " + buildURL);
                     } else {
                         LOG.debug(" Adding Build: " + buildURL);
